@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqh8b4hk2oq2s"]
+
+[ext_resource type="Script" path="res://scripts/ui/card_combiner.gd" id="1_kwwcg"]
+[ext_resource type="PackedScene" uid="uid://b0mytop1ci1gd" path="res://scenes/ui/card.tscn" id="2_1fm4x"]
+
+[node name="CardCombiner" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kwwcg")
+card_scene = ExtResource("2_1fm4x")
+
+[node name="InputCardsContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 94.0
+offset_right = 353.0
+offset_bottom = 439.0
+
+[node name="OutputCardContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -121.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="OutputSlot" type="TextureRect" parent="OutputCardContainer"]
+layout_mode = 2
+
+[node name="NoResultLabel" type="Label" parent="OutputCardContainer"]
+layout_mode = 2
+text = "No valid combo"
+
+[node name="CombineButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1035.0
+offset_top = 55.0
+offset_right = 1113.0
+offset_bottom = 86.0
+text = "Combine"
+
+[node name="CancelButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1045.0
+offset_top = 93.0
+offset_right = 1105.0
+offset_bottom = 124.0
+text = "Cancel"

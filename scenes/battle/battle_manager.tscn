@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7y4cejq4ox66"]
+
+[ext_resource type="Script" path="res://scripts/battle/battle_manager.gd" id="1_s0f1u"]
+[ext_resource type="PackedScene" uid="uid://de73r5ipupwl7" path="res://scenes/ui/deck_manager.tscn" id="2_mo7e0"]
+[ext_resource type="PackedScene" uid="uid://bod3w6keiwlf8" path="res://scenes/ui/hand_manager.tscn" id="3_t4tel"]
+
+[node name="BattleManager" type="Node"]
+script = ExtResource("1_s0f1u")
+
+[node name="DeckManager" parent="." instance=ExtResource("2_mo7e0")]
+position = Vector2(222, 114)
+
+[node name="HandManager" parent="." instance=ExtResource("3_t4tel")]
+position = Vector2(400, 423)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

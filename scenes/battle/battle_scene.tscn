@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://1si3ej6s13aa"]
+
+[ext_resource type="Script" path="res://scenes/battle/battle_scene.gd" id="1_dt84g"]
+[ext_resource type="PackedScene" uid="uid://c7y4cejq4ox66" path="res://scenes/battle/battle_manager.tscn" id="2_f0qs5"]
+[ext_resource type="PackedScene" uid="uid://6mu7wsapqvai" path="res://scenes/ui/Enemy.tscn" id="2_t53v6"]
+[ext_resource type="PackedScene" uid="uid://dqh8b4hk2oq2s" path="res://scenes/ui/card_combiner.tscn" id="3_1a2dl"]
+
+[node name="BattleScene" type="Node2D"]
+script = ExtResource("1_dt84g")
+enemy_scene = ExtResource("2_t53v6")
+enemy_positions = Array[Vector2]([Vector2(300, 300), Vector2(600, 300), Vector2(900, 300)])
+
+[node name="BattleManager" parent="." instance=ExtResource("2_f0qs5")]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 45.0
+offset_right = 341.0
+offset_bottom = 72.0
+max_value = 20.0
+step = 1.0
+show_percentage = false
+
+[node name="PlayerEnergyLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 13.0
+offset_right = 58.0
+offset_bottom = 36.0
+
+[node name="TurnIndicator" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 7.0
+offset_right = 435.0
+offset_bottom = 30.0
+
+[node name="EndTurnButton" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 1055.0
+offset_top = 598.0
+offset_right = 1133.0
+offset_bottom = 629.0
+text = "End Turn"
+
+[node name="CombineButton" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.846
+anchor_bottom = 16.162
+offset_left = 1006.0
+offset_top = 557.0
+offset_right = -21.84
+offset_bottom = -58.48
+text = "Combine Cards"
+
+[node name="EnemyPosition1" type="Marker2D" parent="."]
+position = Vector2(277, 191)
+
+[node name="EnemyPosition2" type="Marker2D" parent="."]
+position = Vector2(556, 196)
+
+[node name="EnemyPosition3" type="Marker2D" parent="."]
+position = Vector2(829, 195)
+
+[node name="CardCombiner" parent="." instance=ExtResource("3_1a2dl")]
+visible = false

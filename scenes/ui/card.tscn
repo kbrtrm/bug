@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0mytop1ci1gd"]
+
+[ext_resource type="Script" path="res://scenes/ui/card.gd" id="1_wtnmo"]
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_wtnmo")
+
+[node name="SelectionHighlight" type="ColorRect" parent="."]
+visible = false
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 205.0
+offset_bottom = 305.0
+color = Color(1, 0.980392, 0.392157, 0.713726)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CardFront" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 300.0
+
+[node name="ColorRect" type="ColorRect" parent="CardFront"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.960784, 0.901961, 0.815686, 1)
+
+[node name="NameLabel" type="Label" parent="CardFront"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 29.0
+offset_right = 68.0
+offset_bottom = 52.0
+
+[node name="TypeLabel" type="Label" parent="CardFront"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 59.0
+offset_right = 68.0
+offset_bottom = 82.0
+
+[node name="CostLabel" type="Label" parent="CardFront"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextureRect" type="TextureRect" parent="CardFront"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DescriptionLabel" type="Label" parent="CardFront"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 145.0
+offset_right = 185.0
+offset_bottom = 212.0
+
+[node name="CardBack" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 300.0
+
+[node name="BackImage" type="TextureRect" parent="CardBack"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
